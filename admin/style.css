@@ -1,0 +1,227 @@
+/* admin/style.css */
+body.admin-body {
+    background-color: #f3f4f6; /* A neutral background from main site */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main.site-main {
+    flex-grow: 1;
+}
+
+/* Override site-header for admin specifics */
+.admin-header.site-header {
+    background-color: #111827; /* Dark footer color for contrast */
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.admin-nav {
+    display: flex;
+    align-items: center;
+}
+.admin-nav a {
+    color: #d1d5db;
+    text-decoration: none;
+    margin-left: 1.5rem;
+    display: inline-flex;
+    align-items: center;
+    transition: color 0.3s ease;
+    font-size: 0.875rem;
+    font-weight: 500;
+    padding: 0.5rem 0;
+}
+.admin-nav a:hover {
+    color: #818cf8; /* A link hover color from main site footer */
+}
+.admin-nav a i {
+    margin-right: 0.3em;
+}
+
+/* Dashboard & Reports Styling */
+.admin-dashboard,
+.admin-features {
+    padding: 4rem 0; /* Increased padding */
+    background-color: #4338ca; /* Copied from main features section */
+}
+
+/* Specific styling for the welcome text on the dashboard */
+.admin-dashboard .dashboard-intro {
+    text-align: center;
+    margin-bottom: 3rem; /* Increased spacing */
+}
+.admin-dashboard .dashboard-intro .section-title {
+    color: #fff;
+    font-size: 2.25rem; /* Larger title */
+}
+.admin-dashboard .dashboard-intro p {
+    color: #c7d2fe;
+    font-size: 1.125rem;
+    max-width: 600px;
+    margin: 0.5rem auto 0;
+}
+
+
+.admin-features .report-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2.5rem;
+}
+.admin-features .report-header .section-title {
+    margin-bottom: 0;
+    text-align: left;
+    color: #fff;
+}
+
+.features-grid { /* Re-using this class from main site */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Slightly larger min-width */
+    gap: 2rem;
+}
+
+.feature-card { /* Re-using this class from main site */
+    background-color: #4f46e5;
+    color: #fff;
+    padding: 2.5rem;
+    border-radius: 0.75rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column; /* Ensure vertical layout */
+    justify-content: space-between; /* Space out content */
+}
+.feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.feature-card h3 {
+    margin-bottom: 0.75rem;
+    font-size: 1.5rem;
+}
+.feature-card p {
+    color: #c7d2fe;
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    flex-grow: 1; /* Allow paragraph to take available space */
+}
+.feature-card .btn {
+    background-color: #fff;
+    color: #4f46e5;
+    font-weight: bold;
+    align-self: center; /* Center button */
+    width: fit-content;
+}
+
+
+/* Table styles for other admin pages */
+.table-container {
+    overflow-x: auto;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    margin: 2rem auto;
+    max-width: 1200px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+}
+th {
+    background-color: #f9fafb;
+    font-weight: 600;
+}
+td.actions {
+    text-align: right;
+    white-space: nowrap; /* Prevent buttons from wrapping */
+}
+
+/* NEW/UPDATED: Styles for buttons inside the table */
+.actions .btn, .actions .btn-primary, .actions .btn-danger {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 0.375rem;
+    transition: all 0.2s ease-in-out;
+    margin-left: 0.5rem;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+.actions .btn:hover, .actions .btn-primary:hover, .actions .btn-danger:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.actions .btn-primary {
+    background-color: #4f46e5;
+    color: #fff;
+}
+.actions .btn-primary:hover {
+     background-color: #4338ca;
+}
+.actions .btn-danger {
+    background-color: #ef4444; /* Modern red color */
+    color: #fff;
+}
+.actions .btn-danger:hover {
+    background-color: #dc2626; /* Darker red on hover */
+}
+
+
+/* Form Styling from main site for consistency on edit pages*/
+.form-container {
+    max-width: 700px;
+    margin: 2rem auto;
+    padding: 2.5rem;
+    background-color: #ffffff;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+}
+.form-container .admin-title {
+    color: #374151;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+.form-group label {
+    display: block;
+    font-weight: 500;
+    color: #374151;
+    margin-bottom: 0.5rem;
+}
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group select {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.375rem;
+    box-sizing: border-box;
+}
+.form-group-checkbox {
+    display: flex;
+    align-items: center;
+}
+.form-group-checkbox input {
+    margin-right: 0.5rem;
+}
+
+
+.admin-footer {
+    text-align: center;
+    padding: 3rem 0;
+    background-color: #111827;
+    color: #d1d5db;
+}
